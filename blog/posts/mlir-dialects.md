@@ -1,6 +1,6 @@
-# Understanding MLIR Dialects
+# Understanding MLIR Dialects (test blog for this site)
 
-*June 15, 2023*
+*April 3, 2023*
 
 MLIR (Multi-Level Intermediate Representation) is a powerful framework for building compilers and optimizing code. One of its most interesting features is the concept of dialects, which allow you to represent different levels of abstraction in your compiler pipeline.
 

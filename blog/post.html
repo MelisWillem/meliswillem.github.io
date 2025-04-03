@@ -81,7 +81,9 @@
         // Configure marked options
         marked.setOptions({
             breaks: true,
-            gfm: true
+            gfm: true,
+            headerIds: false,
+            mangle: false
         });
 
         // Function to load and render the blog post
@@ -99,16 +101,22 @@
                 const markdown = await response.text();
                 const html = marked.parse(markdown);
 
+                // Replace newlines with <br> tags inside code blocks
+                const htmlWithBreaks = html.replace(/<code[^>]*>([\s\S]*?)<\/code>/g, (match, content) => {
+                    return match.replace(content, content.replace(/\n/g, '<br>'));
+                });
+
                 // Apply Tailwind classes to the rendered HTML
-                const styledHtml = html
+                const styledHtml = htmlWithBreaks
                     .replace(/<h1/g, '<h1 class="text-3xl font-bold mb-4"')
                     .replace(/<h2/g, '<h2 class="text-2xl font-bold mb-3"')
                     .replace(/<h3/g, '<h3 class="text-xl font-bold mb-2"')
                     .replace(/<p/g, '<p class="mb-4"')
                     .replace(/<ul/g, '<ul class="list-disc ml-6 mb-4"')
                     .replace(/<ol/g, '<ol class="list-decimal ml-6 mb-4"')
-                    .replace(/<code/g, '<code class="bg-gray-100 px-1 py-0.5 rounded"')
-                    .replace(/<pre/g, '<pre class="bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto"')
+                    .replace(/<pre>/g, '<pre class="bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto font-mono text-sm">')
+                    .replace(/<code class="language-/g, '<code class="language- bg-transparent p-0 rounded-none"')
+                    .replace(/<code>/g, '<code class="bg-gray-100 px-1 py-0.5 rounded"')
                     .replace(/<blockquote/g, '<blockquote class="border-l-4 border-gray-300 pl-4 italic my-4"');
 
                 document.getElementById('post-content').innerHTML = styledHtml;
