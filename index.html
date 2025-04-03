@@ -41,9 +41,38 @@
             left: 0;
             font-weight: bold;
         }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0077B5;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Navigation Menu -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-xl font-bold text-primary">Willem M</a>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="blog/index.html" class="nav-link text-gray-700 hover:text-primary transition-colors">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div class="max-w-4xl mx-auto px-4 py-8">
         <!-- Profile Section -->
         <section class="bg-white rounded-lg shadow-md p-6 mb-8 fade-in">
