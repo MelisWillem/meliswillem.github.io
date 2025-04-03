@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willem M - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0077B5',
+                        secondary: '#00A0DC',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .experience-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .experience-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .experience-list li::before {
+            content: "•";
+            color: #0077B5;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Profile Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="w-48 h-48 rounded-full overflow-hidden ring-4 ring-primary/10">
+                    <img
+                        src="img/profile.jpg"
+                        alt="Willem M"
+                        class="w-full h-full object-cover object-center"
+                        style="object-position: 10% 50%;"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Willem Melis</h1>
+                    <h2 class="text-xl text-primary mb-4">Software Engineer</h2>
+                    <p class="text-gray-600">I'm a passionate software engineer with expertise in Compilers, AI and Operational Research. I love creating elegant solutions to complex problems.</p>
+                    <div class="mt-4 flex justify-center md:justify-start gap-4">
+                        <a href="https://www.linkedin.com/in/willem-m-a54ba9146/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                            LinkedIn →
+                        </a>
+                        <a href="https://github.com/meliswillem" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Projects Section -->
+        <section class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg shadow-md p-6 mb-8 fade-in">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Current side projects I am working on</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Current Project 1 -->
+                <div class="bg-white rounded-lg p-4 border-2 border-primary/20 hover:border-primary/40 transition-colors">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        <h3 class="text-xl font-semibold text-gray-900">MLIR RISCV compiler</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">The compiler is written in C++ and uses MLIR for the IR. Contains a parser for a custom language. And a MLIR backend to convert it into RISV. (represented as an MLIR dialect)</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">LLVM</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">MLIR</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">C++</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/meliswillem/mlir-rv-compiler" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 fade-in">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Skills</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">Programming Languages most familiar with.</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">C++</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">C#</span>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">Technologies I've worked with.</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">llvm</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">mlir</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">cmake</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">docker</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">git</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">linux</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">windows</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 fade-in">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Work Experience</h2>
+            <div class="space-y-8">
+                <!-- Current Position -->
+                <div class="border-l-4 border-primary pl-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Staff Engineer</h3>
+                            <p class="text-gray-600">Synopsys ARC</p>
+                        </div>
+                        <span class="text-sm text-gray-500">2023 - Present</span>
+                    </div>
+                    <!-- Metaware Compiler Section -->
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Metaware Compiler Team</h4>
+                        <p class="text-gray-600 mb-4">Part of the Metaware compiler team, working on a LLVM based compiler.</p>
+                        <ul class="experience-list text-gray-600 mb-4">
+                            <li>Ported ASIP compiler features to the Metaware compiler</li>
+                            <li>Added compiler extensions to make programming with complex vectors easier</li>
+                            <li>Extended existing ASIP model to emulate the ARC-V processor</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">C++</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">LLVM</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">ASIP</span>
+                        </div>
+                    </div>
+
+                    <!-- NPU Compiler Section -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">NPU Compiler Team</h4>
+                        <p class="text-gray-600 mb-4">Working on the NPU compiler team, focusing on MLIR-based optimizations and quantization for machine learning workloads.</p>
+                        <ul class="experience-list text-gray-600 mb-4">
+                            <li>Integration of the onnx-mlir project into the compiler</li>
+                            <li>Design of a MLIR kernel dialect with more fine grained kernels then in the npx compiler to allow simple bit accurate simulation of the quantize graph. And allows costumers to write there own (partial) quantization without knowing all the ins and outs of the hardware.</li>
+                            <li>Implementation of quantization on new kernel dialect, based on the existing quantization in the npx compiler.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">MLIR</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">LLVM</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">C++</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Position -->
+                <div class="border-l-4 border-primary pl-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Software Developer</h3>
+                            <p class="text-gray-600">Previous Company</p>
+                        </div>
+                        <span class="text-sm text-gray-500">2020 - 2022</span>
+                    </div>
+                    <ul class="experience-list text-gray-600 mb-4">
+                        <li>Development of an algorithm to optimally cut Chicken fillets with cubes/strips on top. The resulting branch and bound algorithm had efficiency of over 90% and supported curved lines</li>
+                        <li>Development of an algorithm to detect the position/orientation of material. Using unsupervised learning the algorithm learns the features of the material. The resulting algorithm correctly identifies the orientation/position of all chicken fillets or salmon</li>
+                        <li>Development of cutting algorithm with shape/weight/width/length and height constraints. The material is approximated by a spline surface. A tree-search algorithm then solves the constraint problem, the volume calculations are done using numerical integration. The resulting algorithm finds on over 90% of all the fillets a correct solution</li>
+                    </ul>
+                    <p class="text-gray-600 mb-4">Prototyping was done in python, and the production code was done in C++17/20 in visual studio/CMAKE on windows with a C# api on top to interface with the GUI application.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">C++17/20</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Eigen</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">OpenCV</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">numpy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 fade-in">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Side Projects I've worked on after work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">riscv  emulator in golang</h3>
+                    <p class="text-gray-600 mb-4">A simple emulator for riscv, only supports RV32I, no extensions. After working on a ASIP model at Synopsys for ARC-V, I wanted to solitify my knowledge of the ISA. It's written in golang to get more familiar with the language.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">golang</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">riscv</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/meliswillem/riscv_emu" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">SparseVector</h3>
+                    <p class="text-gray-600 mb-4">A small c++ library for sparse vectors sparsity is tracked at compile time, the build system is CMake. I upgrade it later to use C++ modules.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">C++</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Metaprogramming</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">CMake</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/meliswillem/SparseVector" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">PANOCPP</h3>
+                    <p class="text-gray-600 mb-4">A non-linear solver, implements it's own vector algebra using expression templates.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">C++</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Expression Templates</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">CMake</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/meliswillem/PANOCPP" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add fade-in animation to sections as they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
