@@ -1,0 +1,9 @@
+[
+    {
+        "title": "Understanding MLIR Dialects",
+        "date": "June 15, 2023",
+        "excerpt": "An introduction to MLIR dialects and how they can be used to represent different levels of abstraction in compiler pipelines.",
+        "tags": ["MLIR", "Compiler"],
+        "path": "./posts/mlir-dialects.md"
+    }
+]
